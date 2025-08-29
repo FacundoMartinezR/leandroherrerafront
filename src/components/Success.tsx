@@ -20,7 +20,7 @@ export default function Success() {
     }
     // Opcional: verifica el estado del pago en tu backend
     axios
-      .post("http://localhost:4000/api/stripe/verify", { sessionId })
+      .post("https://leandroherreraback.onrender.com/api/stripe/verify", { sessionId })
       .then((_resp) => {
         setMessage("¡Pago exitoso! Tu reserva está confirmada.")
         setIsSuccess(true)
