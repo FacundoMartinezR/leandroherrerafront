@@ -2,7 +2,7 @@
 import axios, { type InternalAxiosRequestConfig } from 'axios';
   
 // Todas las peticiones de axios usarán este baseURL
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://leandroherreraback.onrender.com';
 
 axios.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   const token = localStorage.getItem('adminToken');
