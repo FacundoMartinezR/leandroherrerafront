@@ -109,7 +109,7 @@ const Services: React.FC = () => {
     });
 
     try {
-      const { data } = await axios.post('http://localhost:4000/api/reservations', {
+      const { data } = await axios.post('https://leandroherreraback.onrender.com/api/reservations', {
         serviceId:    selectedService!.id,
         slotId:       selectedTimeSlot,
         customerEmail: userEmail,
@@ -147,7 +147,7 @@ const Services: React.FC = () => {
         start:     string;
         end:       string;
         status:    string;
-      }[]>(`http://localhost:4000/api/slots`, {
+      }[]>(`https://leandroherreraback.onrender.com/api/slots`, {
         params: { date: formattedDate }
       });
       console.log(`Slots para ${formattedDate}:`, res.data);
