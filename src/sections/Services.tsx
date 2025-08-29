@@ -73,7 +73,7 @@ const Services: React.FC = () => {
     setSelectedTimeSlot(null);
 
     try {
-      const res = await axios.get<SlotSummary[]>(`http://localhost:4000/api/slots/summary`);
+      const res = await axios.get<SlotSummary[]>(`https://leandroherreraback.onrender.com/api/slots/summary`);
       console.log('Resumen de fechas:', res.data);
       setSlotSummaries(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
