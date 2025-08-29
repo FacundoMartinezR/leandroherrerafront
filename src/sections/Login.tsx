@@ -19,9 +19,10 @@ export default function Login() {
       const { data } = await axios.post("/api/login", { username, password })
       localStorage.setItem("adminToken", data.token)
       navigate("/admin")
-    } catch {
-      setError("Usuario o clave incorrectos.")
-    } finally {
+    } catch (err: any) {
+  console.log('Error login:', err.response?.data || err.message);
+  setError(err.response?.data?.error || "Usuario o clave incorrectos.");
+} finally {
       setIsLoading(false)
     }
   }
