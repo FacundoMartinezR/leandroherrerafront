@@ -8,7 +8,7 @@ import axios from "axios"
 export default function Success() {
   const [searchParams] = useSearchParams()
   const sessionId = searchParams.get("session_id")
-  const [message, setMessage] = useState("Verificando tu pago...")
+  const [message, setMessage] = useState("Verifying your payment...")
   const [isLoading, setIsLoading] = useState(true)
   const [isSuccess, setIsSuccess] = useState(false)
 
@@ -22,7 +22,7 @@ export default function Success() {
     axios
       .post("https://leandroherreraback.onrender.com/api/stripe/verify", { sessionId })
       .then((_resp) => {
-        setMessage("¡Pago exitoso! Tu reserva está confirmada.")
+        setMessage("“Successful payment! Your reservation is confirmed. We will send you an email with the details and the meeting link. Thank you so much!” ✅")
         setIsSuccess(true)
         setIsLoading(false)
       })
@@ -67,7 +67,7 @@ export default function Success() {
 
           {/* Title */}
           <h1 className="text-3xl font-bold mb-2" style={{ color: "#050505" }}>
-            {isLoading ? "Procesando..." : isSuccess ? "¡Gracias por tu pago!" : "Error en el pago"}
+            {isLoading ? "Processing..." : isSuccess ? "¡Thank you!" : "Payment Error"}
           </h1>
 
           {/* Message */}
@@ -82,7 +82,7 @@ export default function Success() {
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
             </svg>
-            Volver al inicio
+            Back to Home
           </Link>
         </div>
 
